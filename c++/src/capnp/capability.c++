@@ -563,7 +563,7 @@ public:
         AnyPointer::Pipeline(kj::refcounted<BrokenPipeline>(exception)));
   }
 
-  const void* getBrand() {
+  const void* getBrand() override {
     return nullptr;
   }
 
@@ -587,7 +587,7 @@ public:
     return VoidPromiseAndPipeline { kj::cp(exception), kj::refcounted<BrokenPipeline>(exception) };
   }
 
-  kj::Maybe<ClientHook&> getResolved() {
+  kj::Maybe<ClientHook&> getResolved() override {
     return nullptr;
   }
 
